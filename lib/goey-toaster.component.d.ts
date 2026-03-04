@@ -1,0 +1,30 @@
+import { OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { GoeyToastService } from './goey-toast.service';
+import { GoeyToastData, GoeyToastPosition } from './goey-toast.types';
+import * as i0 from "@angular/core";
+export declare class GoeyToasterComponent implements OnInit, OnDestroy {
+    private toastService;
+    private cdr;
+    position: GoeyToastPosition;
+    duration?: number;
+    gap: number;
+    offset: number | string;
+    showClose: boolean;
+    spring: boolean;
+    bounce: number;
+    maxVisible: number;
+    toasts: GoeyToastData[];
+    private sub?;
+    get positionClass(): string;
+    get offsetStyle(): string;
+    get defaultFillColor(): string;
+    get defaultBorderColor(): string;
+    constructor(toastService: GoeyToastService, cdr: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    trackById(_index: number, toast: GoeyToastData): string | number;
+    onToastDismissed(id: string | number): void;
+    onActionClicked(toast: GoeyToastData): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<GoeyToasterComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GoeyToasterComponent, "goey-toaster", never, { "position": { "alias": "position"; "required": false; }; "duration": { "alias": "duration"; "required": false; }; "gap": { "alias": "gap"; "required": false; }; "offset": { "alias": "offset"; "required": false; }; "showClose": { "alias": "showClose"; "required": false; }; "spring": { "alias": "spring"; "required": false; }; "bounce": { "alias": "bounce"; "required": false; }; "maxVisible": { "alias": "maxVisible"; "required": false; }; }, {}, never, never, true, never>;
+}
